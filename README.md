@@ -1,8 +1,8 @@
 mkdocs-wavedrom-plugin
 =========================================================
 A MkDocs plugin,  
-render waveform charts in the wavedrom style.
-
+render waveform charts in the wavedrom style, 
+using recommendations at [WaveDrom](https://github.com/wavedrom/wavedrom#html-pages).
 
 
 Installation
@@ -54,8 +54,8 @@ extra_javascript:
     # - wavedrom.unpkg.js
     # - skin-default.js
     # above, place *.js in docs directory, or below from internet.
-    - https://cdn.jsdelivr.net/npm/wavedrom@2.1.2/wavedrom.unpkg.js
-    - https://wavedrom.com/skins/default.js
+    - https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.1.0/wavedrom.min.js
+    - https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.1.0/skins/default.js
 ```
 
 

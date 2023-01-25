@@ -27,7 +27,7 @@ class MarkdownWavedromPlugin(BasePlugin):
         if f_exists:
             new_tag = soup.new_tag("script")
             new_tag.string = ("window.addEventListener('load', function() {"
-                              "wavedrom.processAll();});")
+                              "WaveDrom.ProcessAll();});")
             soup.find("body").append(new_tag)
 
         return Text(soup)
