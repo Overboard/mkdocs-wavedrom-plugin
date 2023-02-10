@@ -58,6 +58,23 @@ extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.1.0/skins/default.js
 ```
 
+### using with SuperFences
+
+If using PyMdown Extensions [SuperFences](https://facelessuser.github.io/pymdown-extensions/extensions/superfences/),
+ add a custom fence definition to `mkdocs.yml`.  The WaveDrom plugin will support either of the default
+ [Format Functions](https://facelessuser.github.io/pymdown-extensions/extensions/superfences/#formatters),
+ `fence_code_format` or `fence_div_format`.  Without a custom fence definition, SuperFences will obscure
+ the WaveDrom JSON and the diagram will not be rendered.  Note, SuperFences is not required.
+
+```yaml
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        # WaveDrom
+        - name: wavedrom
+          class: language-wavedrom
+          format: !!python/name:pymdownx.superfences.fence_code_format
+```
 
 
 Demo

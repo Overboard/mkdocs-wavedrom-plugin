@@ -13,16 +13,16 @@ class MarkdownWavedromPlugin(BasePlugin):
     def on_post_page(self, output_content, config, **kwargs):
         # type: () -> Text
         soup = BeautifulSoup(output_content, 'html.parser')
-        sections = soup.find_all("code", class_="language-wavedrom")
+        sections = soup.select("code.language-wavedrom")
+        sections = sections or soup.select("div.language-wavedrom")
+        sections = sections or soup.select("pre.language-wavedrom>code")
 
         f_exists = False
         for section in sections:
             f_exists = True
-            # replace code with div
+            # replace code with script
             section.name = "script"
             section["type"] = "WaveDrom"
-            # replace <pre>
-            section.parent.replace_with(section)
 
         if f_exists:
             new_tag = soup.new_tag("script")
